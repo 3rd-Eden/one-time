@@ -1,6 +1,6 @@
 {
   "name": "one-time",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Run the supplied function exactly one time (once)",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,8 @@
     "nope"
   ],
   "author": "Arnout Kazemier",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "pre-commit": "0.0.x"
+  }
 }

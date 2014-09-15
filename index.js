@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * Wrap callbacks to prevent double execution.
+ *
+ * @returns {Function} A wrapped callback which prevents execution.
+ * @api public
+ */
 module.exports = function one(fn) {
   var called = false
     , value;
@@ -8,11 +14,6 @@ module.exports = function one(fn) {
     if (called) return value;
 
     called = true;
-
-    for ( var i = 0, l = arguments.length, args = new Array(l); i < l; i++) {
-      args[i] = arguments[i];
-    }
-
-    return (value = fn.apply(this, args));
+    return (value = fn.apply(this, arguments));
   };
 };
