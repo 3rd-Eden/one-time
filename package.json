@@ -4,7 +4,8 @@
   "description": "Run the supplied function exactly one time (once)",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "coverage": "istanbul cover test.js"
   },
   "keywords": [
     "once",
@@ -18,6 +19,7 @@
   "author": "Arnout Kazemier",
   "license": "MIT",
   "devDependencies": {
+    "istanbul": "0.3.x",
     "pre-commit": "0.0.x"
   }
 }
