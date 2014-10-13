@@ -1,5 +1,7 @@
 # one-time
 
+[![Build Status](https://travis-ci.org/unshiftio/one-time.svg?branch=master)](https://travis-ci.org/unshiftio/one-time)
+
 Call the supplied function exactly one time. This prevents double callback
 execution. This module can be used on both node and browsers using browserify.
 No magical ES5/6 methods used unlike the `once` module does.
