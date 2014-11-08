@@ -1,8 +1,6 @@
 # one-time
 
-[![Build Status](https://travis-ci.org/unshiftio/one-time.svg?branch=master)](https://travis-ci.org/unshiftio/one-time)
-[![NPM version](https://badge.fury.io/js/one-time.svg)](http://badge.fury.io/js/one-time)
-[![Coverage Status](https://img.shields.io/coveralls/unshiftio/one-time.svg)](https://coveralls.io/r/unshiftio/one-time?branch=master)
+[![Made by unshift](https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square)](http://unshift.io)[![Version npm](http://img.shields.io/npm/v/one-time.svg?style=flat-square)](http://browsenpm.org/package/one-time)[![Build Status](http://img.shields.io/travis/unshiftio/one-time/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/one-time)[![Dependencies](https://img.shields.io/david/unshiftio/one-time.svg?style=flat-square)](https://david-dm.org/unshiftio/one-time)[![Coverage Status](http://img.shields.io/coveralls/unshiftio/one-time/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/one-time?branch=master)[![IRC channel](http://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square)](http://webchat.freenode.net/?channels=unshift) 
 
 Call the supplied function exactly one time. This prevents double callback
 execution. This module can be used on both node and browsers using browserify.
