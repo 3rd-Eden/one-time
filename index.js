@@ -14,6 +14,8 @@ module.exports = function one(fn) {
     if (called) return value;
 
     called = true;
-    return (value = fn.apply(this, arguments));
+    value = fn.apply(this, arguments);
+    fn = null;
+    return value;
   };
 };
