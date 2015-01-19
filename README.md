@@ -53,7 +53,7 @@ example(function () {
 
 The main reason is that `once` cannot be used in a browser environment unless it's
 ES5 compatible. For a module as simple as this I find that unacceptable. In addition
-to that it super heavy on the dependency cite. So it's totally not suitable to be
+to that it super heavy on the dependency side. So it's totally not suitable to be
 used in client side applications.
 
 ## License
