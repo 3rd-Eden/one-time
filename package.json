@@ -1,6 +1,6 @@
 {
   "name": "one-time",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Run the supplied function exactly one time (once)",
   "main": "index.js",
   "scripts": {
