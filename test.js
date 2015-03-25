@@ -36,6 +36,7 @@ describe('one-time', function () {
   });
 
   it('the returned function uses the same displayName as the given fn', function () {
+    /* istanbul ignore next */
     var foo = one(function banana() {
       return 'bar';
     });
