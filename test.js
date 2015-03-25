@@ -1,21 +1,45 @@
-'use strict';
+describe('one-time', function () {
+  'use strict';
 
-var one = require('./')
-  , called = 0;
+  var assume = require('assume')
+    , one = require('./');
 
-/* istanbul ignore next */
-(function () {
-  var callme = one(function maybe(bar) {
-    called++;
-
-    if (bar !== 'bar') throw new Error('Invalid argument received');
-    return 'foo';
+  it('is exported as a function', function () {
+    assume(one).is.a('function');
   });
 
-  if (callme('bar') !== 'foo') throw new Error('Invalid returned state');
-  if (callme('bar') !== 'foo') throw new Error('Invalid returned state');
-  if (callme('bar') !== 'foo') throw new Error('Invalid returned state');
-  if (callme('bar') !== 'foo') throw new Error('Invalid returned state');
+  it('only calls the supplied function once', function (next) {
+    next = one(next);
 
-  if (called !== 1) throw new Error('Called multiple times');
-}());
+    next();
+    next();
+    next();
+    next();
+  });
+
+  it('returns the same value as the called function every single time', function () {
+    var foo = one(function () {
+      return 'bar';
+    });
+
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+    assume(foo()).equals('bar');
+  });
+
+  it('the returned function uses the same displayName as the given fn', function () {
+    var foo = one(function banana() {
+      return 'bar';
+    });
+
+    assume(foo.displayName).equals('banana');
+  });
+});
