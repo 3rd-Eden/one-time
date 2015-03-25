@@ -56,6 +56,10 @@ ES5 compatible. For a module as simple as this I find that unacceptable. In addi
 to that it super heavy on the dependency side. So it's totally not suitable to be
 used in client side applications.
 
+In addition to that we make sure that your code stays easy to debug as returned
+functions are named in the same way as your supplied functions. Making heap
+inspection and stacktraces easier to understand.
+
 ## License
 
 MIT
