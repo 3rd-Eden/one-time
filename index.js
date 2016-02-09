@@ -12,7 +12,6 @@ module.exports = function one(fn) {
     , called = 0
     , value;
 
-
   /**
    * The function that prevents double execution.
    *
