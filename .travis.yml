@@ -1,18 +1,32 @@
 sudo: false
 language: node_js
-node_js:
-  - "5"
-  - "4"
-  - "iojs"
-  - "0.12"
-  - "0.10"
-  - "0.8"
+matrix:
+  fast_finish: true
+  include:
+    - node_js: "4"
+      env: TASK=test-browser
+    - node_js: "5"
+      env: TASK=test-node
+    - node_js: "4"
+      env: TASK=test-node
+    - node_js: "iojs"
+      env: TASK=test-node
+    - node_js: "0.12"
+      env: TASK=test-node
+    - node_js: "0.10"
+      env: TASK=test-node
+    - node_js: "0.8"
+      env: TASK=test-node
+env:
+  global:
+    - secure: XG8lYE78vjVEjQP0Flv6fFWC0odwbOyNRlaexrd3r2lFrXGo8Kp7aixyPTdqTXstp2uY3ND8XLTomHIHxTRwOvy/fNEpjq60L97HTBMx0vJkKqX4MOzGi2B6Yr6EtW0D2EvmhzNIwFbR6bjOOCRwC1TEcLuzoCgt71dppLCW1SA=
+    - secure: Up+r7EhCfiFRPX+Q1oD49JHeuQbP8jqcygVYd3o9gHqEdFOR+T/Bk8joCJNPf3/jJYaBo1kiCgUhrDx6L+uLfLdcWzw2Sy/PDKqFy5eNEqpaLhFY15P6+8PwGEFxHA3gFUHR1zKFlqmcQNIYvZfHs7vCbUp3lzBz837goyQLOZM=
 before_install:
   - 'if [ "${TRAVIS_NODE_VERSION}" == "0.8" ]; then npm install -g npm@2.14.15; fi'
 script:
-  - "npm run test-travis"
+  - "npm run ${TASK}"
 after_script:
-  - "npm install coveralls@2 && cat coverage/lcov.info | coveralls"
+  - 'if [ "${TASK}" == "test-node" ]; then npm i coveralls@2 && cat coverage/lcov.info | coveralls; fi'
 notifications:
   irc:
     channels:

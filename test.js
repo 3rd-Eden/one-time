@@ -1,8 +1,15 @@
+/* istanbul ignore next */
 describe('one-time', function () {
   'use strict';
 
   var assume = require('assume')
-    , one = require('./');
+    , one = require('./')
+    , isIE;
+
+  try {
+    isIE = navigator.appName === 'Microsoft Internet Explorer'
+      || ~navigator.userAgent.indexOf('Trident/7.0');
+  } catch (e) {}
 
   it('is exported as a function', function () {
     assume(one).is.a('function');
@@ -35,12 +42,13 @@ describe('one-time', function () {
     assume(foo()).equals('bar');
   });
 
-  it('the returned function uses the same displayName as the given fn', function () {
-    /* istanbul ignore next */
-    var foo = one(function banana() {
-      return 'bar';
-    });
+  if (!isIE) {
+    it('the returned function uses the same displayName as the given fn', function () {
+      var foo = one(function banana() {
+        return 'bar';
+      });
 
-    assume(foo.displayName).equals('banana');
-  });
+      assume(foo.displayName).equals('banana');
+    });
+  }
 });
