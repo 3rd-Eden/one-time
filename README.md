@@ -1,6 +1,8 @@
 # one-time
 
-[![Made by unshift](https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square)](http://unshift.io)[![Version npm](http://img.shields.io/npm/v/one-time.svg?style=flat-square)](http://browsenpm.org/package/one-time)[![Build Status](http://img.shields.io/travis/unshiftio/one-time/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/one-time)[![Dependencies](https://img.shields.io/david/unshiftio/one-time.svg?style=flat-square)](https://david-dm.org/unshiftio/one-time)[![Coverage Status](http://img.shields.io/coveralls/unshiftio/one-time/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/one-time?branch=master)[![IRC channel](http://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square)](http://webchat.freenode.net/?channels=unshift) 
+[![Made by unshift](https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square)](http://unshift.io)[![Version npm](https://img.shields.io/npm/v/one-time.svg?style=flat-square)](http://browsenpm.org/package/one-time)[![Build Status](https://img.shields.io/travis/unshiftio/one-time/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/one-time)[![Dependencies](https://img.shields.io/david/unshiftio/one-time.svg?style=flat-square)](https://david-dm.org/unshiftio/one-time)[![Coverage Status](https://img.shields.io/coveralls/unshiftio/one-time/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/one-time?branch=master)[![IRC channel](https://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square)](https://webchat.freenode.net/?channels=unshift)
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/one-time.svg)](https://saucelabs.com/u/one-time)
 
 Call the supplied function exactly one time. This prevents double callback
 execution. This module can be used on both node and browsers using browserify.
@@ -44,7 +46,7 @@ function example(fn) {
   fn('up');
 }
 
-example(function () { 
+example(function () {
   return 'bar'
 });
 ```
@@ -62,4 +64,4 @@ inspection and stacktraces easier to understand.
 
 ## License
 
-MIT
+[MIT](LICENSE)
