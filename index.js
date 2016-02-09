@@ -8,8 +8,10 @@
  * @api public
  */
 module.exports = function one(fn) {
-  var called = 0
+  var name = fn.displayName || fn.name
+    , called = 0
     , value;
+
 
   /**
    * The function that prevents double execution.
@@ -32,6 +34,6 @@ module.exports = function one(fn) {
   // listeners you don't see a load of `onetime` functions but actually the
   // names of the functions that this module will call.
   //
-  onetime.displayName = fn.displayName || fn.name || onetime.displayName || onetime.name;
+  if (name) onetime.displayName = name;
   return onetime;
 };
